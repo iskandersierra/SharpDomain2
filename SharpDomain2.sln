@@ -3,8 +3,64 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9AF38F99-BF64-41BC-9AE2-087475758191}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{AE74F65D-7C02-468E-81A9-8BCB6958408A}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Home.md = docs\Home.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52BC948B-B7FB-4D66-9390-C4CB0E8B17E5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{2B7DC1DC-96A7-4B69-93BC-9415BC00568D}"
+	ProjectSection(SolutionItems) = preProject
+		src\Framework\Readme.md = src\Framework\Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{592DF3FF-7E8F-4AA9-B89A-F6146A0932D6}"
+	ProjectSection(SolutionItems) = preProject
+		src\Samples\Readme.md = src\Samples\Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contacts", "Contacts", "{55B82E15-435A-4E1F-A469-92CD0C06D02E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Commands", "src\Samples\Contacts\Contacts.Commands\Contacts.Commands.csproj", "{FA6921FF-1940-4258-AF75-F02B819FD3C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain", "src\Framework\SharpDomain\SharpDomain.csproj", "{9B4C2D63-4D1C-4804-9D13-EFBA182D14D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Events", "src\Samples\Contacts\Contacts.Events\Contacts.Events.csproj", "{72B093A4-B70E-4904-B877-8953832AEBC1}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA6921FF-1940-4258-AF75-F02B819FD3C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6921FF-1940-4258-AF75-F02B819FD3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6921FF-1940-4258-AF75-F02B819FD3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6921FF-1940-4258-AF75-F02B819FD3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B4C2D63-4D1C-4804-9D13-EFBA182D14D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4C2D63-4D1C-4804-9D13-EFBA182D14D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4C2D63-4D1C-4804-9D13-EFBA182D14D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4C2D63-4D1C-4804-9D13-EFBA182D14D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B093A4-B70E-4904-B877-8953832AEBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B093A4-B70E-4904-B877-8953832AEBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B093A4-B70E-4904-B877-8953832AEBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B093A4-B70E-4904-B877-8953832AEBC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B7DC1DC-96A7-4B69-93BC-9415BC00568D} = {9AF38F99-BF64-41BC-9AE2-087475758191}
+		{592DF3FF-7E8F-4AA9-B89A-F6146A0932D6} = {9AF38F99-BF64-41BC-9AE2-087475758191}
+		{55B82E15-435A-4E1F-A469-92CD0C06D02E} = {592DF3FF-7E8F-4AA9-B89A-F6146A0932D6}
+		{FA6921FF-1940-4258-AF75-F02B819FD3C4} = {55B82E15-435A-4E1F-A469-92CD0C06D02E}
+		{9B4C2D63-4D1C-4804-9D13-EFBA182D14D0} = {2B7DC1DC-96A7-4B69-93BC-9415BC00568D}
+		{72B093A4-B70E-4904-B877-8953832AEBC1} = {55B82E15-435A-4E1F-A469-92CD0C06D02E}
 	EndGlobalSection
 EndGlobal
