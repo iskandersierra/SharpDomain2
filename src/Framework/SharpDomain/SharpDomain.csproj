@@ -39,17 +39,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commanding\CommandProcessorBase.cs" />
+    <Compile Include="Commanding\CommandToEventProcessor.cs" />
+    <Compile Include="Commanding\EntityCommand.cs" />
     <Compile Include="Commanding\EntityCreationCommand.cs" />
+    <Compile Include="Commanding\ICommandProcessor.cs" />
+    <Compile Include="Commanding\ICommandToEventProcessor.cs" />
+    <Compile Include="Commanding\IDomainCommand.cs" />
+    <Compile Include="Commanding\IEntityCommand.cs" />
+    <Compile Include="Commanding\IEntityCreationCommand.cs" />
+    <Compile Include="Commanding\IIdentifiedCommand.cs" />
     <Compile Include="EventSourcing\EntityCreationEvent.cs" />
     <Compile Include="EventSourcing\EntityEvent.cs" />
+    <Compile Include="EventSourcing\EventSourced.cs" />
     <Compile Include="EventSourcing\ICommandRelatedEvent.cs" />
     <Compile Include="EventSourcing\IDomainEvent.cs" />
     <Compile Include="EventSourcing\IEntityCreationEvent.cs" />
-    <Compile Include="EventSourcing\IEntityEvent.cs" />
+    <Compile Include="EventSourcing\IEntityEventSourced.cs" />
     <Compile Include="EventSourcing\IEntityRelatedEvent.cs" />
+    <Compile Include="EventSourcing\IEventEmitter.cs" />
+    <Compile Include="EventSourcing\IEventSourced.cs" />
     <Compile Include="EventSourcing\IIdentifiedEvent.cs" />
     <Compile Include="EventSourcing\IVersionedEvent.cs" />
+    <Compile Include="EventSourcing\IVersionedEventSourced.cs" />
+    <Compile Include="IoC\IRequire.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\AutoInvoker.cs" />
+    <Compile Include="Utils\CombNewGuidGenerator.cs" />
+    <Compile Include="Utils\ConstantAutoInvoker.cs" />
+    <Compile Include="Utils\FailAlwaysAutoInvoker.cs" />
+    <Compile Include="Utils\IAutoInvoker.cs" />
+    <Compile Include="Utils\INewGuidGenerator.cs" />
+    <Compile Include="Utils\SystemNewGuidGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

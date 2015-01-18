@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70DD818B-8A48-4BF6-B3B8-E3076F0FDE61}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Contacts.CommandProcessing</RootNamespace>
+    <AssemblyName>Contacts.CommandProcessing.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\..\..\..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonSteps.cs" />
+    <Compile Include="ContactSteps.cs" />
+    <Compile Include="ContactWithCode.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactWithCode.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ContactWithTitle.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactWithTitle.feature</DependentUpon>
+    </Compile>
+    <Compile Include="CreateContactProcessor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateContactProcessor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="EventSourcedSteps.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateContactCodeProcessor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateContactCodeProcessor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateContactTitleProcessor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateContactTitleProcessor.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\SharpDomain.SpecsUtils\SharpDomain.SpecsUtils.csproj">
+      <Project>{C3D452E2-9B96-4FF2-8610-55BAA3112857}</Project>
+      <Name>SharpDomain.SpecsUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\SharpDomain\SharpDomain.csproj">
+      <Project>{9b4c2d63-4d1c-4804-9d13-efba182d14d0}</Project>
+      <Name>SharpDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contacts.CommandProcessing\Contacts.CommandProcessing.csproj">
+      <Project>{13e92e54-bcc1-4a58-8e67-a352f4f9569d}</Project>
+      <Name>Contacts.CommandProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contacts.Commands\Contacts.Commands.csproj">
+      <Project>{fa6921ff-1940-4258-af75-f02b819fd3c4}</Project>
+      <Name>Contacts.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contacts.Events\Contacts.Events.csproj">
+      <Project>{72b093a4-b70e-4904-b877-8953832aebc1}</Project>
+      <Name>Contacts.Events</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ContactWithCode.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ContactWithCode.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ContactWithTitle.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ContactWithTitle.feature.cs</LastGenOutput>
+    </None>
+    <None Include="CreateContactProcessor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateContactProcessor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="UpdateContactCodeProcessor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateContactCodeProcessor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="UpdateContactTitleProcessor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateContactTitleProcessor.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

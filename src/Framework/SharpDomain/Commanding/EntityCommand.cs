@@ -2,10 +2,11 @@
 
 namespace SharpDomain.Commanding
 {
-    public abstract class EntityCreationCommand :
-        IEntityCreationCommand,
+    public abstract class EntityCommand :
+        IEntityCommand,
         IIdentifiedCommand
     {
         public Guid CommandId { get; set; }
+        public Guid EntityId { get; set; }
     }
 }

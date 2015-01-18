@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72B093A4-B70E-4904-B877-8953832AEBC1}</ProjectGuid>
+    <ProjectGuid>{EC7A2739-27AD-481E-9D4A-73BBC9FE78B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Contacts.Events</RootNamespace>
-    <AssemblyName>Contacts.Events</AssemblyName>
+    <RootNamespace>SharpDomain</RootNamespace>
+    <AssemblyName>SharpDomain.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -37,15 +40,38 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\..\..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactCodeUpdated.cs" />
-    <Compile Include="ContactCreated.cs" />
-    <Compile Include="ContactTitleUpdated.cs" />
+    <Compile Include="CommonSteps.cs" />
+    <Compile Include="EventSourcing\EventSourced.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventSourced.feature</DependentUpon>
+    </Compile>
+    <Compile Include="EventSourcing\EventSourcedSteps.cs" />
+    <Compile Include="EventSourcing\ExceptionSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\SharpDomain\SharpDomain.csproj">
+    <None Include="App.config" />
+    <None Include="EventSourcing\EventSourced.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EventSourced.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpDomain.SpecsUtils\SharpDomain.SpecsUtils.csproj">
+      <Project>{C3D452E2-9B96-4FF2-8610-55BAA3112857}</Project>
+      <Name>SharpDomain.SpecsUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpDomain\SharpDomain.csproj">
       <Project>{9B4C2D63-4D1C-4804-9D13-EFBA182D14D0}</Project>
       <Name>SharpDomain</Name>
     </ProjectReference>

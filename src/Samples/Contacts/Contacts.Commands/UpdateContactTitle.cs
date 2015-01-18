@@ -2,7 +2,7 @@
 
 namespace Contacts.Commands
 {
-    public class UpdateContactTitle : EntityCreationCommand
+    public class UpdateContactTitle : EntityCommand
     {
         public string Title { get; set; }
     }

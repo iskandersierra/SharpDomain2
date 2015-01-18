@@ -2,7 +2,7 @@
 
 namespace SharpDomain.EventSourcing
 {
-    public interface IEntityRelatedEvent : IDomainEvent
+    public interface IEntityEvent : IDomainEvent
     {
         Guid EntityId { get; set; }
     }
