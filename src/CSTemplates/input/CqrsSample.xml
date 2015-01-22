@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dm:SoftwareDefinition xmlns:dm="http://schemas.imodelsoft.com/sharpdomain/models"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       Name="CqrsSample" x:Name="CqrsSample">
+  <dm:SoftwareDefinition.Metadata>
+    <dm:Metadata Title="CQRS sample software specification"/>
+  </dm:SoftwareDefinition.Metadata>
+  <dm:SoftwareDefinition.Components>
+    <dm:BoundedContext Name="SetOperations" x:Name="SetOperationsBC">
+      <dm:BoundedContext.Metadata>
+        <dm:Metadata Title="Set operations implementation"/>
+      </dm:BoundedContext.Metadata>
+      <dm:BoundedContext.Dependencies>
+        <dm:ComponentDependency Component="{x:Reference ContactsBC}"/>
+      </dm:BoundedContext.Dependencies>
+    </dm:BoundedContext>
+    <dm:BoundedContext Name="Contacts" x:Name="ContactsBC">
+      <dm:BoundedContext.Metadata>
+        <dm:Metadata Title="Contact management component"/>
+      </dm:BoundedContext.Metadata>
+      <dm:BoundedContext.Dependencies>
+        <dm:ComponentDependency Component="{x:Reference ContactsBC}"/>
+        <dm:ComponentDependency Component="{x:Reference SetOperationsBC}"/>
+      </dm:BoundedContext.Dependencies>
+    </dm:BoundedContext>
+  </dm:SoftwareDefinition.Components>
+</dm:SoftwareDefinition>

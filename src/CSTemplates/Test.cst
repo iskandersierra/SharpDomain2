@@ -1,0 +1,102 @@
+﻿<%-- 
+Name: Test template
+Author: Iskander Sierra
+Description: Test template
+--%>
+<%@ Template Language="C#" TargetLanguage="Text" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %>
+<%@ Assembly Name="System.Xaml" %>
+<%@ Assembly Name="SharpDomain.Models" Path=".\libs\" %>
+<%@ Import Namespace="CodeSmith.CustomProperties" %>
+<%@ Import Namespace="System" %>
+<%@ Import Namespace="System.Linq" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Xaml" %>
+<%@ Import Namespace="SharpDomain.Models" %>
+<%@ Property Name="InputFile" Default=".\input\CqrsSample.xml" Type="System.String" Editor="FileNameEditor" %>
+<%
+    var model = (SoftwareDefinition)XamlServices.Load(InputFile).Init();
+    var type = this.GetType();
+    var engine = new TemplateEngine(".");
+    var compiled = engine.Compile("EntryPoint.cst");
+    var template = compiled.CreateTemplateInstance();
+%>
+File <%= InputFile %> exists: <%= File.Exists(InputFile) %>
+Model name = <%= model.Name %>
+Model title = <%= model.Metadata.Title %>
+Components
+<% foreach (var comp in model.Components) { %>
+    <%= comp.Name %> depends on <%= string.Join(", ", comp.Dependencies.Select(d => d.Component.Name)) %>
+<% 	} %>
+
+<% while (type != null) { %>
+Type: <%= type.FullName %>
+<% 	    type = type.BaseType; %>
+<% 	} %>
+
+Template properties: 
+    FullPath = <%= CodeTemplateInfo.FullPath %>
+    FileName = <%= CodeTemplateInfo.FileName %>
+    DirectoryName = <%= CodeTemplateInfo.DirectoryName %>
+    Language = <%= CodeTemplateInfo.Language %>
+    CodeBehind = <%= CodeTemplateInfo.CodeBehind %>
+    TargetLanguage = <%= CodeTemplateInfo.TargetLanguage %>
+    TemplateEncoding = <%= CodeTemplateInfo.TemplateEncoding %>
+    Description = <%= CodeTemplateInfo.Description %>
+    DateCreated = <%= CodeTemplateInfo.DateCreated.ToLongDateString() %>
+    DateModified = <%= CodeTemplateInfo.DateModified.ToLongDateString() %>
+    CodeSmithVersion = <%= CodeTemplateInfo.CodeSmithVersion %>
+    OutputType = <%= CodeTemplateInfo.OutputType %> of <%= string.Join(", ", Enum.GetNames(typeof(CodeTemplateOutputType))) %>
+    State = <%= State %> of <%= string.Join(", ", Enum.GetNames(typeof(TemplateState))) %>
+    
+Compiled info:
+    CodeBehind = <%= compiled.CodeBehind %>
+    CompiledAssembly = <%= compiled.CompiledAssembly %>
+    CompilerVersion = <%= compiled.CompilerVersion %>
+    DependenciesHashCode = <%= compiled.DependenciesHashCode %>
+    Description = <%= compiled.Description %>
+    Duration = <%= compiled.Duration %>
+    Encoding = <%= compiled.Encoding %>
+    FullPath = <%= compiled.FullPath %>
+    FullTypeName = <%= compiled.FullTypeName %>
+    IsFromCache = <%= compiled.IsFromCache %>
+    Language = <%= compiled.Language %>
+    OutputDirectory = <%= compiled.OutputDirectory %>
+    OutputType = <%= compiled.OutputType %>
+    PathToAssembly = <%= compiled.PathToAssembly %>
+    Success = <%= compiled.Success %>
+    TargetLanguage = <%= compiled.TargetLanguage %>
+
+Licensing: 
+    AllowProfessionalFeature = <%= CodeSmithLicense.AllowProfessionalFeature %>
+    AllowSDKFeature = <%= CodeSmithLicense.AllowSDKFeature %>
+    AllowServerFeature = <%= CodeSmithLicense.AllowServerFeature %>
+    AllowStandardFeature = <%= CodeSmithLicense.AllowStandardFeature %>
+    ExpirationDate = <%= CodeSmithLicense.ExpirationDate %>
+    IsBeta = <%= CodeSmithLicense.IsBeta %>
+    IsDeactivateAllowed = <%= CodeSmithLicense.IsDeactivateAllowed %>
+    IsFullTrial = <%= CodeSmithLicense.IsFullTrial %>
+    IsProfessional = <%= CodeSmithLicense.IsProfessional %>
+    IsProfessionalTrial = <%= CodeSmithLicense.IsProfessionalTrial %>
+    IsRegistrationAllowed = <%= CodeSmithLicense.IsRegistrationAllowed %>
+    IsSDK = <%= CodeSmithLicense.IsSDK %>
+    IsServer = <%= CodeSmithLicense.IsServer %>
+    IsStandard = <%= CodeSmithLicense.IsStandard %>
+    IsTrial = <%= CodeSmithLicense.IsTrial %>
+    LicensedEdition = <%= CodeSmithLicense.LicensedEdition %>
+
+Rendering compiled:
+------------------------------------------------------------------------
+<% RenderCompiled(template); %>
+------------------------------------------------------------------------
+Template properties:
+<% foreach (var prop in template.GetProperties()) { %>
+    <%= prop.Name %>: <%= prop.PropertyType.Name %>
+<% 	} %>
+<script runat="template">
+public void RenderCompiled(CodeTemplate template)
+{
+    template.SetProperty("SampleStringProperty", "Iskander Sierra Zaldivar");
+    template.Render(this.Response);
+}
+</script>

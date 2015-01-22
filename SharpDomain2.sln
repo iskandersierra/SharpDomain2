@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.Specs", "src\Fr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.SpecsUtils", "src\Framework\SharpDomain.SpecsUtils\SharpDomain.SpecsUtils.csproj", "{C3D452E2-9B96-4FF2-8610-55BAA3112857}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSTemplates", "CSTemplates", "{139C64DC-2C1C-491B-A6BB-B73FB62B65B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDomain.Models", "src\Framework\SharpDomain.Models\SharpDomain.Models.csproj", "{2246BF28-022E-4B2F-A95C-B212B5BD1BE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{C3D452E2-9B96-4FF2-8610-55BAA3112857}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3D452E2-9B96-4FF2-8610-55BAA3112857}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3D452E2-9B96-4FF2-8610-55BAA3112857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2246BF28-022E-4B2F-A95C-B212B5BD1BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2246BF28-022E-4B2F-A95C-B212B5BD1BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2246BF28-022E-4B2F-A95C-B212B5BD1BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2246BF28-022E-4B2F-A95C-B212B5BD1BE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,5 +98,7 @@ Global
 		{70DD818B-8A48-4BF6-B3B8-E3076F0FDE61} = {55B82E15-435A-4E1F-A469-92CD0C06D02E}
 		{EC7A2739-27AD-481E-9D4A-73BBC9FE78B8} = {2B7DC1DC-96A7-4B69-93BC-9415BC00568D}
 		{C3D452E2-9B96-4FF2-8610-55BAA3112857} = {2B7DC1DC-96A7-4B69-93BC-9415BC00568D}
+		{139C64DC-2C1C-491B-A6BB-B73FB62B65B6} = {9AF38F99-BF64-41BC-9AE2-087475758191}
+		{2246BF28-022E-4B2F-A95C-B212B5BD1BE1} = {2B7DC1DC-96A7-4B69-93BC-9415BC00568D}
 	EndGlobalSection
 EndGlobal
